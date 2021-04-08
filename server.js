@@ -11,49 +11,34 @@ app.set("views", path1);
 
 app.get('/',(req,res) =>{
 	res.render('index',
-	{pageTitle: 'SBI Bank Transactions'
+	{pageTitle: 'Home',
+	 websiteName: 'One-Click Shopping'
   });
 });
 
-app.get('/initiateTrans',(req,res) =>{
-	res.render('initiateTrans',
-  {pageTitle: 'Initiate',
-   accountholderName: 'Kriti Kishore',
-   bankName: 'SBI', 
-   accountNumber: '386538658658',
-   totalAmount: '25000',
-   ifscCode: 'WRWERG54264'
+app.get('/aboutPage',(req,res) =>{
+	res.render('aboutPage',
+  {pageTitle: 'About',
+   websiteName: 'One-Click Shoppping', 
+   tagline: 'An exciting place for the whole family to shop.',
   });
 });
 
-app.get('/confirmTrans',(req,res) =>{
-	res.render('confirmTrans',
-	{pageTitle: 'Confirm',
-	accountholderName: 'Kriti Kishore',
-	bankName: 'SBI', 
-	accountNumber: '386538658658',
-	totalAmount: '25000',
-	ifscCode: 'WRWERG54264'});
+app.get('/contactPage',(req,res) =>{
+	res.render('contactPage',
+	{pageTitle: 'Contact',
+	websiteName: 'One-Click Shopping',
+	email: 'abc@gmail.com', 
+	contactNumber: '1234567890',
+	});
 });
 
-app.get('/updateTrans',(req,res) =>{
-	res.render('updateTrans',
-	{pageTitle: 'Update',
-	accountholderName: 'Kriti Kishore',
-	bankName: 'SBI', 
-	accountNumber: '386538658658',
-	totalAmount: '30000',
-	ifscCode: 'WRWERG54264'});
-});
-
-app.get('/cancelTrans',(req,res) =>{
-	res.render('cancelTrans',
-	{pageTitle: 'Cancel',
-	accountholderName: 'Kriti Kishore',
-	bankName: 'SBI', 
-	accountNumber: '386538658658',
-	totalAmount: '25000',
-	ifscCode: 'WRWERG54264'});
+app.get('/cartPage',(req,res) =>{
+	res.render('cartPage',
+	{pageTitle: 'Your Cart',
+	websiteName: 'One-Click Shopping',
+	listItems: 'List of items available in your cart'
+    });
 });
 
 app.listen(PORT, () => {
